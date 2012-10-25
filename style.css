@@ -1,0 +1,484 @@
+/*
+Theme Name: LCD IA
+Theme URI: https://wpcom-themes.svn.automattic.com/_s/
+Author: Automattic
+Author URI: http://automattic.com/
+Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Version: 1.1-wpcom
+License: GNU General Public License
+License URI: license.txt
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+
+/* =Global
+----------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	clear: both;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/* Text elements */
+p {
+	margin-bottom: 1.5em;
+}
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	overflow: auto;
+	max-width: 100%;
+}
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+th {
+	font-weight: bold;
+}
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+button,
+input {
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid #ccc;
+	border-color: #ccc #ccc #bbb #ccc;
+	border-radius: 3px;
+	background: #e6e6e6;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+	color: rgba(0,0,0,.8);
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	font-size: 12px;
+	font-size: 1.4rem;
+	line-height: 1;
+	padding: 1.12em 1.5em 1em;
+	text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa #bbb;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb #bbb;
+	-webkit-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+	-moz-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+	box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+}
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+input[type=text],
+input[type=email],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+	color: #111;
+}
+input[type=text],
+input[type=email] {
+	padding: 3px;
+}
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-left: 3px;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 98%;
+}
+
+/* Links */
+a {
+	color: #425fae;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation {
+	
+}
+
+
+/* =Content
+----------------------------------------------- */
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+.entry-meta {
+	clear: both;
+}
+.byline {
+	display: none;
+}
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+
+
+/*
+Type-A-File "Library Science" designed by Jessica Hische.
+http://www.jessicahische.com
+@jessicahische
+
+Creative Commons License by Attribution. 
+Feel free to take it, adapt it, & use it on both commercial and non-commercial projects.
+Though I'd like a smidgeon of credit, so just leave this bit in here. K?
+*/
+
+/*Pick Your Fonts*/
+
+body, h3, h4, h5, h6, .header, .subheader, .head, .subhead, .pullquote, .kicker {font-family: 'Palatino Linotype', 'Book Antiqua', 'Palatino', 'serif'}
+h1,.pullquote, aside, .sidenote, blockquote, aside h1, .sidenote h1, h2 {font-family: Georgia, serif;}
+.drop-cap{font-family:'Times New Roman', Times, serif;}
+
+/*Size & Vertical Rhythm*/
+body{font-size:87.5%;font-size:14px;line-height:1.58em;}
+
+/*HTML Standard Elements*/
+h1{font-size:3em;line-height:1.333em;margin:.97em 0 0em;border-bottom:1px dotted black;padding-bottom:.4em;} 
+h2{font-size:2em;line-height:1.1em;margin:2em 0 .5em;letter-spacing:.05em;font-style:italic;}
+h1 + img, h2 + img{margin-top:1em;}
+h3{font-size:1.125em;}
+h4{font-weight:bold;font-size:1em;}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+small{display:block;font-size:.75em;letter-spacing:.1em;margin:2.2em 0 -.2em;font-style:italic;font-weight:bold;line-height:2em;}
+p, ul, ol, form{margin:1.5em 0 1em;}
+ul{list-style-position:inside;list-style-type:disc;line-height:1.5;}
+li{margin-bottom:.75em;}
+ol{list-style-position:outside;list-style-type:decimal;}
+blockquote{font-style:italic;margin:0em 0em 0em 1.5em;line-height:1.75em;font-size:1.2em;}
+blockquote:before{content: "“";font-size:2em;text-indent:-.8em;margin-top:.1em;float:left;opacity:.5;}
+cite{display:block;text-transform:uppercase;letter-spacing:1px;font-style:normal;font-size:smaller;margin-top:.5em;margin-left:1.5em;}
+cite:before{content:"—";font-size:1.5em;text-indent:-1.3em;font-weight:bold;margin-top:-.1em;opacity:.5;}
+pre{margin:1.5em;}
+dl{margin:1.45em 0;/*border-top:1px dotted #999;border-bottom:1px dotted #999;*/}
+dt{word-spacing:.2em;border-bottom:1px dotted #999;margin-top:1.5em;font-weight:bold;text-transform:uppercase;font-size:.9em;letter-spacing:.2em;padding-bottom:.5em;}
+dt:before{content:"\2767";font-size:1.25em;text-indent:-1.5em;float:left;}
+dd{font-style:italic;font-size:.9em;margin-bottom:1.65em;line-height:1.75em;margin-top:.75em;}
+abbr{text-transform:uppercase;font-size:.9em;letter-spacing:.1em;}
+p {margin-bottom:0;hyphenate: auto;hyphenate-before:2;hyphenate-after:3;hyphenate-lines: 3;orphans:4}
+p + p, p + aside + p, p + .sidenote + p, p.kicker + p.kicker{text-indent:1.8em;margin-top:0;}
+p span.pullquote{text-indent:0;}
+
+/*Compositional Elements*/
+.kicker{font-size:1.33em;line-height:1.693em;font-style:italic;margin:-.35em 0 -.35em;}
+.kicker, .pullquote{font-weight:100;}
+.run-in, cite{text-transform:uppercase;font-style:normal;letter-spacing:.2em;font-size:.9em;}
+.superscript{font-family:arial, sans-serif;vertical-align:super;font-size:75%;margin-right:.4em;text-transform:lowercase;font-variant:small-caps;letter-spacing:.1em;line-height:0;}
+.subscript{font-family:arial, sans-serif;vertical-align:sub;font-size:75%;margin-right:.4em;text-transform:lowercase;font-variant:small-caps;letter-spacing:.1em;line-height:0em;}
+a.superscript, a.subscript{text-decoration:none;}
+aside, .sidenote{font-size:.83em;font-style:italic;margin-top:-.4em;}
+aside h1, .sidenote h1{text-transform:uppercase;margin-bottom:.8em;font-size:1em;line-height:1.5em;font-style:normal;font-weight:bold;letter-spacing:.2em;padding-bottom:.7em;}
+aside p, .sidenote p{line-height:1.7em;margin:0;font-style:normal;}
+aside ul, aside ol, .sidenote ul, .sidenote ol{margin-top:1.3em;line-height:1.7em;}
+aside ul li, aside ol li, .sidenote ul li, .sidenote ol li{margin-bottom:1.3em;}
+.pullquote{font-style:italic;letter-spacing:.05em;margin:0em .7em 0 0;padding-top:.35em;line-height:1.5em;display:block;float:left;font-size:1.75em;width:50%;}
+.pullquote:before {font-family:Georgia, serif;content: "“";font-size:2em;text-indent:-.6em;margin-top:.05em;float:left;opacity:.3;}
+.footnote{border-top:1px solid black;font-size:.75em;margin-top:3.5em;}
+.footnote li{margin:1.5em 0 1.5em;word-spacing:.1em;line-height:1.75em;}
+.caption{font-size:.8em;font-style:italic;margin:.6em 0 -.2em;}
+.kicker .run-in{text-transform:uppercase;font-style:normal;letter-spacing:.25em;font-size:.9em;}
+.drop-cap {display:block;font-style:normal;font-size:8em;float:left;margin:.04em .1em 0 0;line-height:.67em;}
+
+/*Tweaks*/
+.kern{letter-spacing:-.1em;}
+
+body {
+	background: #eaeaea;
+} 
+#page {
+	margin: 40px auto;
+	width: 640px;
+}
+
+.content-section {
+	background: #fff;
+	margin-bottom: 60px;
+	padding: 15px 25px 10px 25px;
+	position: relative;
+}
+
+.content-section .section-description {
+	color: #333;
+	position: absolute;
+		top: -20px;
+		right: 0;
+
+	text-transform:uppercase;
+	
+	font-size:1em;
+	line-height:1.5em;
+	font-style:normal;
+	font-weight:bold;
+	letter-spacing:.2em;
+	padding-bottom:.7em;
+}
+
+#masthead .widget h1 {
+	display: none;
+}
+
+.entry-title a {
+	color: #000;
+	text-decoration: none;
+}
+
+.secondary-content .widget {
+	background: #f4f4f4;
+	margin: 20px auto;
+	padding: 5px 10px;
+	width: 250px;
+}
+
