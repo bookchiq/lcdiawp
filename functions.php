@@ -65,8 +65,9 @@ add_action( 'widgets_init', 'lcdia_widgets_init' );
  * Enqueue scripts and styles
  */
 function lcdia_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '20121025'.date('s') );
 
 	wp_enqueue_script( 'theme-functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20121025', true );
+	wp_enqueue_script( 'jstree', get_template_directory_uri() . '/js/jstree/jquery.jstree.js', array( 'jquery' ), '20121025', true );
 }
 add_action( 'wp_enqueue_scripts', 'lcdia_scripts' );

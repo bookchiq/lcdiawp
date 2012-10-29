@@ -91,6 +91,19 @@
 		<span class="section-description"><?php _e( 'Secondary Content', 'lcdia' ); ?></span>
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>
+
+	<div class="content-section site-structure">
+		<span class="section-description"><?php _e( 'Site Structure', 'lcdia' ); ?></span>
+		<p><em>This area is only for reference; it doesn't reflect any particular type of content, just a quick way to see all of the content that's currently mapped out.</em></p>
+		<br>
+		<div class="wrapper">
+			<ul id="site-structure-list">
+				<?php wp_list_pages( array( 'title_li' => '' ) ); ?>
+			</ul>
+		</div>
+	</div>
+
+	
 </div><!-- #page .hfeed .site -->
 
 <?php wp_footer(); ?>

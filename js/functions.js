@@ -1,4 +1,6 @@
 jQuery(document).ready(function($) {
+	jQuery(".site-structure .wrapper").jstree();
+
 	// $('.content-section').css('background', 'orange');
 
 	// $('.accordion > dt > a').click(function() {
